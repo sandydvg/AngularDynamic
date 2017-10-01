@@ -9,45 +9,23 @@ import { DataService } from './data.service';
 })
 
 export class ClosedComponent implements OnInit {
-
-  data: ITableData[] = [];
-  filteredData: ITableData[] = [];
+  data: ITableData[];
+  filterdData: ITableData[];
   errorMessage: string;
-  tempData1: ITableData[] = [];
-  filterdString: 'closed';
   constructor(private tableData: DataService) {
 
   }
+//   // this.vecService.getData().then(taskList => {
+//   //   this.datasource = taskList;
+//   //   this.taskList = this.datasource;// Storing data into my task list array
+//   //   this.sortedList = this.taskList.filter(
+//   //   task => task.status ==='Submitted');
 
-  get listFilter(): ITableData {
-    return;
-  }
-  set listFilter(value: ITableData) {
-    this.filteredData = this.data;
-  }
-
+// });
   ngOnInit(): void {
-
-    this.someFunction();
+    this.tableData.getTableData()
+    .subscribe(
+    data => this.data = data,
+    error => this.errorMessage = <any>error);
   }
-  someFunction() {
-  //   let tempData = [];
-  //   let x;
-  //   let temp = {};
-  //   let y = Object.values(this.data);
-  //   for (let i in y) {
-  //       x = y[i].status;
-  //       if (x === 'Closed')
-  //       {
-  //         temp = this.data[i];
-  //         tempData[i] = temp;
-  //        } 
-  //   }
-  //   this.tableData.getTableData().subscribe(
-  //     //data => this.tempData1 = tempData,
-  //     error => this.errorMessage = <any>error
-  //   );
-    
-    
-}
 }

@@ -10,7 +10,6 @@ export class AllStatusComponent implements OnInit {
 
 
   data: ITableData[] = [];
-  products: ITableData[];
   errorMessage: string;
 
   constructor(private tableData: DataService) {
