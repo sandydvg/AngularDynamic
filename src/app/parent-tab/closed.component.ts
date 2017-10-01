@@ -11,7 +11,9 @@ import { DataService } from './data.service';
 export class ClosedComponent implements OnInit {
   data: ITableData[];
   filterdData: ITableData[];
+  tempData: ITableData[];
   errorMessage: string;
+  sortedData: ITableData[];
   constructor(private tableData: DataService) {
 
   }
@@ -25,7 +27,15 @@ export class ClosedComponent implements OnInit {
   ngOnInit(): void {
     this.tableData.getTableData()
     .subscribe(
-    data => this.data = data,
+    data => this.data = data ,
     error => this.errorMessage = <any>error);
+
+    this.tableData.getData().then(tasklist => {
+      this.filterdData = tasklist;
+      this.tempData = this.filterdData;
+      this.sortedData = this.data.filter( task => task.status === 'Closed' );
+    } );
+
   }
+
 }

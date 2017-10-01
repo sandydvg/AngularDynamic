@@ -22,6 +22,23 @@ export class DataService {
        .catch(this.handleError );
 
     }
+    // getdata(): ITableData[] {
+    //     // return this.http.get('../app/common/task.json')
+    //     // .toPromise()
+    //     // .then(res => <Task[]> res.json().data)
+    //     // .then(data => { return data; });
+    //     return this._http.get(this._data_url)
+    //     .toPromise()
+    //     .then(res => <ITableData[]> res.JSON().data)
+    //     .then(data => {return data; });;
+    // }
+
+    getData(): Promise<ITableData[]> {
+        return this._http.get(this._data_url)
+        .toPromise()
+        .then(res => <ITableData[]>res)
+        .then(data => data );
+    }
    private handleError(err: HttpErrorResponse ) {
        console.log(err.message);
        return Observable.throw(err.message);

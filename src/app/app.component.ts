@@ -26,7 +26,9 @@ export class AppComponent {
     {label: 'Closed', link: 'closed'}];
 
     this.activeLinkIndex =
-        this.routeLinks.indexOf(this.routeLinks.find(tab => router.url.indexOf(tab.link) != -1));
+        this.routeLinks.indexOf(
+        this.routeLinks.find
+        (tab => router.url.indexOf(tab.link) !== -1));
   }
 
 }
