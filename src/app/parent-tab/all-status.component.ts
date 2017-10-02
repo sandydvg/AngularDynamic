@@ -7,8 +7,8 @@ import { ITableData } from './model';
 import { DataService } from './data.service';
 @Component({
   selector: 'app-all-status',
-  templateUrl: './all-status.component.html',
-  styleUrls: ['./all-status.component.css']
+  templateUrl: './all-status.component.html'
+  // styleUrls: ['./all-status.component.css']
 })
 export class AllStatusComponent implements OnInit {
 
@@ -63,7 +63,6 @@ ngOnInit(): void {
       this.tempData = this.filterdData;
       this.sortedData = this.data;
       this.source = new LocalDataSource(this.sortedData);
-      console.log('Sorted Data' + this.sortedData);
 
     } );
 }

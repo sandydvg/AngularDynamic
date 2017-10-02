@@ -1,98 +1,98 @@
 [ {
     "type": "Type 1",
     "name": "Name 1",
-    "date": "Date 1",
+    "date": "26.10.2019",
     "owner": "Owner 1",
     "status": "Work in progress"
   },
   {
     "type": "Type 1",
     "name": "Name 1",
-    "date": "Date 1",
+    "date": "13.10.2017",
     "owner": "Owner 1",
     "status": "Work in progress"
   },
   {
     "type": "Type 1",
     "name": "Name 1",
-    "date": "Date 1",
+    "date": "12.04.2018",
     "owner": "Owner 1",
     "status": "Work in progress"
   },
   {
     "type": "Type 1",
     "name": "Name 1",
-    "date": "Date 1",
+    "date": "16.12.2017",
     "owner": "Owner 1",
     "status": "Work in progress"
   },
   {
     "type": "Type 2",
     "name": "Name 2",
-    "date": "Date 2",
+    "date": "12.01.2018",
     "owner": "Owner 2",
     "status": "Submitted"
   },
   {
     "type": "Type 2",
     "name": "Name 2",
-    "date": "Date 2",
+    "date": "01.10.2018",
     "owner": "Owner 2",
     "status": "Submitted"
   },
   {
     "type": "Type 2",
     "name": "Name 2",
-    "date": "Date 2",
+    "date": "01.10.2017",
     "owner": "Owner 2",
     "status": "Submitted"
   },
   {
     "type": "Type 2",
     "name": "Name 2",
-    "date": "Date 2",
+    "date": "26.10.2018",
     "owner": "Owner 2",
     "status": "Submitted"
   },
   {
     "type": "Type 2",
     "name": "Name 2",
-    "date": "Date 2",
+    "date": "26.10.2017",
     "owner": "Owner 2",
     "status": "Submitted"
   },
   {
     "type": "Type 3",
     "name": "Name 3",
-    "date": "Date 3",
+    "date": "26.04.2019",
     "owner": "Owner 3",
     "status": "Closed"
   },
   {
     "type": "Type 3",
     "name": "Name 3",
-    "date": "Date 3",
+    "date": "26.10.2016",
     "owner": "Owner 3",
     "status": "Closed"
   },
   {
     "type": "Type 3",
     "name": "Name 3",
-    "date": "Date 3",
+    "date": "26.01.2017",
     "owner": "Owner 3",
     "status": "Closed"
   },
   {
     "type": "Type 3",
     "name": "Name 3",
-    "date": "Date 3",
+    "date": "13.02.2017",
     "owner": "Owner 3",
     "status": "Closed"
   },
   {
     "type": "Type 3",
     "name": "Name 3",
-    "date": "Date 3",
+    "date": "26.10.2015",
     "owner": "Owner 3",
     "status": "Closed"
   }

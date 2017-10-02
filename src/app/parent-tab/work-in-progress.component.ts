@@ -52,7 +52,6 @@ settings = {
   ng2TableData: ITableData[] = [];
   source: LocalDataSource;
     constructor(private tableData: DataService) {
-    this.source = new LocalDataSource(this.sortedData);
 }
 
 ngOnInit(): void {

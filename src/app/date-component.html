@@ -1,0 +1,12 @@
+<div>
+        <!-- <form #myForm="ngForm" novalidate>
+                <my-date-range-picker 
+                    name="mydaterange" 
+                    onDateRangeChanged()
+                    [options]="myDateRangePickerOptions"
+                    [(ngModel)]="model" required>
+                </my-date-range-picker>
+        </form> -->
+        <my-date-range-picker [options]="myDateRangePickerOptions"
+        (dateRangeChanged)="onDateRangeChanged($event)"></my-date-range-picker>
+</div>

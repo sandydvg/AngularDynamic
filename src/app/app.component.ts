@@ -5,6 +5,7 @@ import { RouterModule, Router} from '@angular/router';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DataService } from './parent-tab/data.service';
+import { IMyDrpOptions } from 'mydaterangepicker';
 
 @Component({
   selector: 'app-root',
