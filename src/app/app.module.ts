@@ -16,7 +16,7 @@ import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { MyDateRangePickerModule } from 'mydaterangepicker';
-import { DateComponent } from './data.component';
+import { DateComponent } from './date.component';
 
 
 
