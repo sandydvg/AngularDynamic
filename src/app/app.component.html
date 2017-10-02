@@ -1,7 +1,10 @@
-<div>
-    Tab Demo Example
-    <hr>
-    
+<div >
+    <div style="text-align:center">
+        Tab Demo Example
+        <hr>
+    </div>
+    <div>
+         
     <nav md-tab-nav-bar aria-label="weather navigation links">
         <a md-tab-link
             *ngFor="let routeLink of routeLinks; let i = index"
@@ -12,5 +15,8 @@
          </a>
     </nav>
     <router-outlet> </router-outlet>
+    </div>
+    
+   
 
 </div>

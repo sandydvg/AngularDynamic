@@ -1,23 +1,6 @@
 <div class="table-responsive">
-    <table class="table"
-        *ngIf='data && data.length'>
-        <thead>
-            <tr>
-                <th>Type</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Owner</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor='let temp of sortedData'>
-                <td >{{temp.type}}</td>
-                <td >{{temp.name}}</td>
-                <td >{{temp.date}}</td>
-                <td >{{temp.owner}}</td>
-                <td >{{temp.status}}</td>
-            </tr>
-        </tbody> 
-    </table>
-  </div>
+        <ng2-smart-table
+            [settings]="settings"
+            [source]="source"
+        ></ng2-smart-table>
+      </div>

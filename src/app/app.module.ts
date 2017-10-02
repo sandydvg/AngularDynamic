@@ -14,6 +14,8 @@ import { ClosedComponent } from './parent-tab/closed.component';
 import { AllStatusComponent } from './parent-tab/all-status.component';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { MyDateRangePickerModule } from 'mydaterangepicker';
 
 
 
@@ -38,11 +40,15 @@ export const ROUTES = [
     SubmittedComponent,
     ClosedComponent,
   ],
-
   imports: [
 
     BrowserModule,
     MdTabsModule,
+    BrowserModule,
+    FormsModule,
+    Ng2SmartTableModule,
+    HttpClientModule,
+    MyDateRangePickerModule,
     MaterialModule,
     HttpClientModule,
     FormsModule,
