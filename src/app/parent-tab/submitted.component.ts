@@ -60,7 +60,14 @@ ngOnInit(): void {
     this.tableData.getData().then(tasklist => {
       this.filterdData = tasklist;
       this.tempData = this.filterdData;
-      this.sortedData = this.data.filter( task => task.status === 'Submitted' );
+      if (this.tableData.beginDate === undefined) {
+        this.sortedData = this.data.filter( task => task.status === 'Submitted');
+      }else {
+        this.sortedData = this.data.filter( task => task.status === 'Submitted'
+        && Number(this.tableData.beginDate) <= Number(new Date(task.date))
+        && Number(this.tableData.endDate) >= Number(new Date(task.date))
+        );
+      }
       this.source = new LocalDataSource(this.sortedData);
     } );
 }

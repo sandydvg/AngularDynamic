@@ -10,9 +10,15 @@ import { ITableData } from './model';
 
 @Injectable()
 export class DataService {
-
+    beginDate: string;
+    endDate: string;
     private _data_url= './api/data/data.json';
     constructor(private _http: HttpClient) {}
+
+    setInputData(beginDate: string, endDate: string) {
+        this.beginDate = beginDate;
+        this.endDate = endDate;
+    }
 
     getTableData(): Observable<ITableData[]> {
 

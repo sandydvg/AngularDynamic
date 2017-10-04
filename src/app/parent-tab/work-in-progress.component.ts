@@ -13,18 +13,18 @@ export class WorkInProgressComponent implements OnInit {
   private myDateRangePickerOptions: IMyDrpOptions = {
     // other options...
     dateFormat: 'dd.mm.yyyy',
-};
-data: ITableData[];
-filterdData: ITableData[];
-tempData: ITableData[];
-errorMessage: string;
-sortedData: ITableData[];
-// "type": "Type 1",
-// "name": "Name 1",
-// "date": "Date 1",
-// "owner": "Owner 1",
-// "status": "Work in progress"
-settings = {
+  };
+  data: ITableData[];
+  filterdData: ITableData[];
+  tempData: ITableData[];
+  errorMessage: string;
+  sortedData: ITableData[];
+  // "type": "Type 1",
+  // "name": "Name 1",
+  // "date": "Date 1",
+  // "owner": "Owner 1",
+  // "status": "Work in progress"
+  settings = {
     actions: false,
     columns: {
       type: {
@@ -44,28 +44,35 @@ settings = {
         filter: false
       },
       status: {
-          title: 'Status',
-          filter: false
+        title: 'Status',
+        filter: false
       }
     }
   };
   ng2TableData: ITableData[] = [];
   source: LocalDataSource;
-    constructor(private tableData: DataService) {
-}
+  constructor(private tableData: DataService) {
+  }
 
-ngOnInit(): void {
+  ngOnInit(): void {
     this.tableData.getTableData()
-    .subscribe(
-    data => this.data = data ,
-    error => this.errorMessage = <any>error);
-    this.tableData.getData().then(tasklist => {
-      this.filterdData = tasklist;
-      this.tempData = this.filterdData;
-      this.sortedData = this.data.filter( task => task.status === 'Work in progress' );
+      .subscribe(
+      data => this.data = data,
+      error => this.errorMessage = <any>error);
+      this.tableData.getData().then(tasklist => {
+          this.filterdData = tasklist;
+          this.tempData = this.filterdData;
+          if (this.tableData.beginDate === undefined) {
+            this.sortedData = this.data.filter(task => task.status === 'Work in progress');
+          }else {
+            this.sortedData = this.data.filter(task => task.status === 'Work in progress'
+              && Number(this.tableData.beginDate) <= Number(new Date(task.date))
+              && Number(this.tableData.endDate) >= Number(new Date(task.date))
+          );
+       }
       this.source = new LocalDataSource(this.sortedData);
-    } );
-}
+    });
+  }
 
 
 

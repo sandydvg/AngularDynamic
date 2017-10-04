@@ -1,8 +1,23 @@
 <div>
     <div style="text-align:center">
-        Tab Demo Example
-        <hr>
+       <i>Tab Demo Example</i> 
     </div>
+        <hr>
+        <div>
+               
+             <a [routerLink]="['/allstatus']"> All Status</a><br>
+             <a [routerLink]="['/work']"> Work in Progress</a><br>
+             <a [routerLink]="['/submitted']"> Submitted</a><br>
+             <a [routerLink]="['/closed']"> Closed</a><br>
+
+        </div>
+        <br>
+       <!-- {label: 'All Status', link: 'allstatus'},
+        {label: 'Work in Progress', link: 'work'},
+        {label: 'Submitted', link: 'submitted'},
+        {label: 'Closed', link: 'closed'}]; -->
+
+
     <app-datepicker></app-datepicker>
 
     <div>
@@ -14,7 +29,4 @@
         </nav>
         <router-outlet> </router-outlet>
     </div>
-
-
-
 </div>

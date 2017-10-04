@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ITableData } from './model';
 import { DataService } from './data.service';
 import { LocalDataSource } from 'ng2-smart-table';
 import { IMyDrpOptions } from 'mydaterangepicker';
+import { DateComponent } from '../date.component';
 
 @Component({
   selector: 'app-closed',
   templateUrl: './closed.component.html',
   styleUrls: ['./closed.component.css']
+  
 })
 
 export class ClosedComponent implements OnInit {
@@ -64,7 +66,15 @@ ngOnInit(): void {
     this.tableData.getData().then(tasklist => {
       this.filterdData = tasklist;
       this.tempData = this.filterdData;
-      this.sortedData = this.data.filter( task => task.status === 'Closed' );
+
+      if (this.tableData.beginDate === undefined) {
+        this.sortedData = this.data.filter( task => task.status === 'Closed');
+      }else {
+        this.sortedData = this.data.filter( task => task.status === 'Closed'
+        && Number(this.tableData.beginDate) <= Number(new Date(task.date))
+        && Number(this.tableData.endDate) >= Number(new Date(task.date))
+        );
+      }
       this.source = new LocalDataSource(this.sortedData);
     } );
 }
